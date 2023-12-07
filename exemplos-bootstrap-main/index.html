@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercício Bootstrap</title>
+
+    <!-- Chamada do CSS BS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- Minha CSS -->
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <main class="container">    
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand logo" href="#">Shop</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#evento">Loja</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#sobre">Sobre</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#valores" role="button">
+                      Valores
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">Galeria</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#contatos">Contatos</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <article class="row rounded-2 mb-4 p-4 d-flex align-items-center" id="evento">
+            <section class="col-md-6">
+                <h1 class="display-4 text-blue">ECommerce</h1>
+                <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto, temporibus?</p>
+                <a href="" class="btn btn-outline-dark"><i
+                    class="bi bi-arrow-down-circle ms-1 position-icon"></i>More Infos</a>
+            </section>
+
+            <figure class="col-md-6">
+                <img src="./images/chat-bot-animate.svg" alt="Imagem de um chatBot" class="img-fluid">
+            </figure>
+          </article>
+          
+          <section>
+            <!-- Galeria de imagens uma grande quatro pequenas -->
+
+            <h2 class="text-blue my-4" id="galeria">Galeria de Imagens</h2>
+
+            <div class="row d-flex align-items-center justify-content-center">
+
+                <div class="col-md-6 my-2">
+                    <img src="./images/pexels-kindel-media-8566472.jpg" alt="Imagem do robô ASDF"
+                        class="img-fluid rounded">
+                </div>
+
+                <div class="col-md-6 my-2">
+                    <div class="row">
+                        <div class="col-6 my-2">
+                            <img src="./images/pexels-kindel-media-8566472.jpg" alt="Imagem do robo Astor"
+                                class="img-fluid rounded">
+                        </div>
+                        <div class="col-6 my-2">
+                            <img src="./images/pexels-kindel-media-8982672.jpg" alt="Imagem do robo Astor"
+                                class="img-fluid rounded">
+                        </div>
+                        <div class="col-6 my-2">
+                            <img src="./images/pexels-lj-2085831.jpg" alt="Imagem do robo Astor"
+                                class="img-fluid rounded">
+                        </div>
+                        <div class="col-6 my-2">
+                            <img src="./images/pexels-maxime-lecomte-13471116.jpg" alt="Imagem do robo Astor"
+                                class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- cards -->
+        <section class="row my-4" id="robos">
+          <h2 class="text-blue mb-4">Melhores Robôs</h2>
+
+          <!-- 1o.robo -->
+          <div class="col-md-6 col-lg-3 my-2">
+              <div class="card">
+                  <img src="./images/pexels-kindel-media-8566472.jpg" class="card-img-top" alt="Imagem do Robô XPTO">
+                  <div class="card-body">
+                      <h5 class="card-title">Terno</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, suscipit
+                          atque.</p>
+                      <a href="#" class="btn btn-outline-primary">Galeria de Imagens</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- 2o.robo -->
+          <div class="col-md-6 col-lg-3 my-2">
+              <div class="card">
+                  <img src="./images/pexels-kindel-media-8982672.jpg" class="card-img-top" alt="Imagem do Robô ABCD">
+                  <div class="card-body">
+                      <h5 class="card-title">Relogio</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, suscipit
+                          atque.</p>
+                      <a href="#" class="btn btn-outline-primary">Galeria de Imagens</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- 3o.robo -->
+          <div class="col-md-6 col-lg-3 my-2">
+              <div class="card">
+                  <img src="./images/pexels-lj-2085831.jpg" class="card-img-top" alt="Imagem do Robô XCVB">
+                  <div class="card-body">
+                      <h5 class="card-title">Chapéu</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, suscipit
+                          atque.</p>
+                      <a href="#" class="btn btn-outline-primary">Galeria de Imagens</a>
+                  </div>
+              </div>
+          </div>
+
+          <!-- 4o.robo -->
+          <div class="col-md-6 col-lg-3 my-2">
+              <div class="card">
+                  <img src="./images/pexels-maxime-lecomte-13471116.jpg" class="card-img-top"
+                      alt="Sapatos">
+                  <div class="card-body">
+                      <h5 class="card-title">Bracelete</h5>
+                      <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, suscipit
+                          atque.</p>
+                      <a href="#" class="btn btn-outline-primary">Galeria de Imagens</a>
+                  </div>
+              </div>
+          </div>
+
+
+
+          <!-- Footer -->
+
+          <footer class="bg-info text-center text-lg-start ms-auto">
+            <div class="text-center p-4">
+              © WebStandart 2023
+            </div>
+          </footer>
+
+    </main>
+    <!-- Chamada JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
