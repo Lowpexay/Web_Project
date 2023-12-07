@@ -1,8 +1,10 @@
 # Pokédex
 
-Um teste de js, css e html com uma pokédex
+A pokedex project that consumes the PokeAPI API to generate images. 
+<br>
+Languages ​​used: HTML, CSS and Javascript
 
-| :computer: Vitrine.Dev |  Lowpexay   |
+| :computer: Projet by |  Lowpexay   |
 | -------------  | --- |
 | :sparkles: Nome        | **Pokédex**
 | :label: Tecnologias | javascript, html, css(tecnologias utilizadas)
