@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="m-3 navbar-brand fs-2" href="#">ToDoList</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto m-4 fs-3">
+            <li class="nav-item active">
+              <a class="nav-link link-no-decoration" href="about.html">About me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-no-decoration" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section class="background-sections p-4 position-relative">
+        <div class="row custom-row">
+            <div class="col-xl-10 mx-auto">
+                <div class="border border-2 rounded p-3">
+                    <h3 class="fw-bold p-3">Sua Lista de Atividades</h3>
+                    <form id="todo-form" class="mb-3">
+                        <div class="mb-3">
+                            <label for="activity" class="form-label">Atividade:</label>
+                            <input type="text" id="activity" name="activity" class="form-control text-bg-dark" required>
+                        </div>
+    
+                        <div class="mb-4">
+                            <label for="priority" class="form-label">Prioridade:</label>
+                            <select id="priority" name="priority" class="form-select text-bg-dark">
+                                <option value="Alta">Alta</option>
+                                <option value="Média">Média</option>
+                                <option value="Baixa">Baixa</option>
+                            </select>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="time" class="form-label">Horário:</label>
+                            <input type="time" id="time" name="time" class="form-control text-bg-dark" required>
+                        </div>
+    
+                        <button type="button" class="btn btn-primary" onclick="addTask()">Adicionar Tarefa</button>
+                    </form>
+    
+                    <ul id="task-list" class="list-group m-4"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="clock" class="text-center mt-3 fs-2"></div>
+        <!-- Rodapé -->
+        <footer class="text-center bg-black text-bg-dark">
+            <p class="card-text py-3">
+                <i class="bi bi-c-circle"></i> Developed by
+                <a href="https://www.linkedin.com/in/gabriel-gramacho-cantano/" target="_blank" class="custom-link">Gabriel Gramacho</a>
+            </p>
+    </section>
+    
+
+    <script>
+        // Recuperar tarefas salvas no armazenamento local ao carregar a página
+        window.onload = function () {
+            restoreTasks();
+            updateClock();
+        };
+    
+        function addTask() {
+            var activity = document.getElementById("activity").value;
+            var priority = document.getElementById("priority").value;
+            var time = document.getElementById("time").value;
+    
+            if (activity && priority && time) {
+                var taskList = document.getElementById("task-list");
+    
+                // Verificar se a tarefa já está na lista
+                var existingTasks = taskList.getElementsByClassName("task-text");
+                for (var i = 0; i < existingTasks.length; i++) {
+                    if (existingTasks[i].innerText.includes(activity)) {
+                        alert("Já existe uma tarefa com o mesmo nome na lista.");
+                        return;
+                    }
+                }
+    
+                var li = document.createElement("li");
+                li.classList.add("word-wrap");
+                li.innerHTML = `
+                    <span class="task-text">${activity} - Prioridade: ${priority} - Horário: ${time}</span>
+                    <button class="btn btn-danger delete-btn" onclick="removeTask(this)">Excluir</button>
+                `;
+    
+                taskList.appendChild(li);
+    
+                // Limpar campos do formulário
+                document.getElementById("activity").value = "";
+                document.getElementById("priority").value = "alta";
+                document.getElementById("time").value = "";
+    
+                // Salvar tarefas no armazenamento local
+                saveTasks();
+            } else {
+                alert("Preencha todos os campos antes de adicionar uma tarefa.");
+            }
+        }
+    
+        function removeTask(btn) {
+            var li = btn.parentNode;
+            li.parentNode.removeChild(li);
+    
+            // Salvar tarefas no armazenamento local após a remoção
+            saveTasks();
+        }
+    
+        function saveTasks() {
+            var taskList = document.getElementById("task-list").innerHTML;
+            localStorage.setItem("tasks", taskList);
+        }
+    
+        function restoreTasks() {
+            var savedTasks = localStorage.getItem("tasks");
+            if (savedTasks) {
+                document.getElementById("task-list").innerHTML = savedTasks;
+            }
+        }
+    
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+    
+            var formattedTime = padZero(hours) + ":" + padZero(minutes) + ":" + padZero(seconds);
+            document.getElementById("clock").innerText = "Current Time: " + formattedTime;
+    
+            setTimeout(updateClock, 1000); // Atualiza a cada segundo
+        }
+    
+        function padZero(number) {
+            return number < 10 ? "0" + number : number;
+        }
+    </script>
+      
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
