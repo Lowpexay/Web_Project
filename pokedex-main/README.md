@@ -4,7 +4,7 @@ A pokedex project that consumes the PokeAPI API to generate images.
 <br>
 Languages ​​used: HTML, CSS and Javascript
 
-| :computer: Projet by |  Lowpexay   |
+| :computer: Project by |  Lowpexay   |
 | -------------  | --- |
 | :sparkles: Nome        | **Pokédex**
 | :label: Tecnologias | javascript, html, css(tecnologias utilizadas)
