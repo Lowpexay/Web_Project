@@ -1,5 +1,5 @@
 
-This project is a website with a list of activities for the day
+This project is a website with a list of activities for the day 📝
 <br>
 Languages ​​used: HTML, CSS and JavaScript
 
