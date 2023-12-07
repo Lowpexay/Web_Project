@@ -6,7 +6,7 @@ Languages ​​used: HTML, CSS and Javascript
 
 | :computer: Project by |  Lowpexay   |
 | -------------  | --- |
-| :sparkles: Nome        | **Pokédex**
+| :sparkles: Name        | **Pokédex**
 | :label: Languages | javascript, html, css
 | :rocket: URL       | https://lowpexay.github.io/pokedex/
 
